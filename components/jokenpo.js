@@ -7,8 +7,9 @@
  */
 
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import TopoJokenpo from './topo-jokenpo';
+import PainelBotoesJokenpo from './painel-botoes-jokenpo';
 import IconeEscolha from './icone-escolha';
 
 class Jokenpo extends Component{
@@ -52,23 +53,17 @@ class Jokenpo extends Component{
             <View>
                 <TopoJokenpo></TopoJokenpo>
 
-                <View style={styles.painelBotoes}>
-                    <View style={styles.botaoEscolha}>
-                        <Button color='white' title='Pedra' onPress={() => {this.jogarJokenpo(0)}}></Button>
-                    </View>
-                    <View style={styles.botaoEscolha}>
-                        <Button color='white' title='Papel' onPress={() => {this.jogarJokenpo(1)}}></Button>
-                    </View>
-                    <View style={styles.botaoEscolha}>
-                        <Button color='white' title='Tesoura' onPress={() => {this.jogarJokenpo(2)}}></Button>
-                    </View>
-                </View>
-
                 <View style={styles.palco}>
-                    <Text style={styles.textoResultado}>{this.state.resultado}</Text>
                     <IconeEscolha escolha={this.state.escolhaUsuario} jogador='Usuário'></IconeEscolha>
                     <IconeEscolha escolha={this.state.escolhaComputador} jogador='Computador'></IconeEscolha>
+                    <Text style={styles.textoResultado}>{this.state.resultado}</Text>
                 </View>
+
+                <PainelBotoesJokenpo
+                    funcaoPedra={() => this.jogarJokenpo(0)}
+                    funcaoPapel={() => this.jogarJokenpo(1)}
+                    funcaoTesoura={() => this.jogarJokenpo(2)}>
+                </PainelBotoesJokenpo>
 
             </View>
         );
@@ -76,19 +71,10 @@ class Jokenpo extends Component{
 }
 
 const styles = StyleSheet.create({
-    botaoEscolha: {
-        width: 90,
-        backgroundColor: '#2196F3',
-        color: 'white',
-    },
-    painelBotoes: {
-        marginBottom: 10,
-        flexDirection: 'row',
-        justifyContent: 'space-around'
-    },
     palco: {
         alignItems: 'center',
         marginTop: 10,
+        height: '68%',
     },
     textoResultado: {
         fontSize: 30,
@@ -96,9 +82,6 @@ const styles = StyleSheet.create({
         color: '#CD5C5C',
         height: 60,
     },
-    imagem: {
-        margin: 10,
-    }
 });
 
 export default Jokenpo;
