@@ -8,6 +8,9 @@
 
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
+import imagemPedra from '../images/pedra.png';
+import imagemPapel from '../images/papel.png';
+import imagemTesoura from '../images/tesoura.png';
 
 class IconeEscolha extends Component{
     constructor(props){
@@ -17,17 +20,10 @@ class IconeEscolha extends Component{
     render(){
         let imagem = null;
         switch(this.props.escolha){
-            case 'Papel':
-                imagem = require('../images/papel.png');
-                break;
-            case 'Pedra':
-                imagem = require('../images/pedra.png');
-                break;
-            case 'Tesoura':
-                imagem = require('../images/tesoura.png');
-                break;
-            default:
-                return <></>;
+            case 'Papel': imagem = imagemPedra; break;
+            case 'Pedra': imagem = imagemPapel; break;
+            case 'Tesoura': imagem = imagemTesoura; break;
+            default: return <></>;
         }
         
         return (
