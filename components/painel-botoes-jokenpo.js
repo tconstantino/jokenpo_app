@@ -18,13 +18,13 @@ class PainelBotoesJokenpo extends Component{
         return(
             <View style={styles.painelBotoes}>
                 <View style={styles.botaoEscolha}>
-                    <Button color='white' title='Pedra' onPress={this.props.funcaoPedra}></Button>
+                    <Button title='Pedra' onPress={this.props.funcaoPedra}></Button>
                 </View>
                 <View style={styles.botaoEscolha}>
-                    <Button color='white' title='Papel' onPress={this.props.funcaoPapel}></Button>
+                    <Button title='Papel' onPress={this.props.funcaoPapel}></Button>
                 </View>
                 <View style={styles.botaoEscolha}>
-                    <Button color='white' title='Tesoura' onPress={this.props.funcaoTesoura}></Button>
+                    <Button title='Tesoura' onPress={this.props.funcaoTesoura}></Button>
                 </View>
             </View>
         );
@@ -36,11 +36,8 @@ export default PainelBotoesJokenpo;
 const styles = StyleSheet.create({
     botaoEscolha: {
         width: 90,
-        backgroundColor: '#2196F3',
-        color: 'white',
     },
     painelBotoes: {
-        marginBottom: 10,
         flexDirection: 'row',
         justifyContent: 'space-around'
     },

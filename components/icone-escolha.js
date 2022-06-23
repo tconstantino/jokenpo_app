@@ -31,9 +31,9 @@ class IconeEscolha extends Component{
         }
         
         return (
-            <View style={{alignItems: 'center', marginTop: 25, marginBottom: 90}}>
+            <View style={{alignItems: 'center', marginBottom: 50}}>
                 <Text style={{fontSize: 20, fontWeight: 'bold'}}>{this.props.jogador}</Text>
-                <Image style={{marginTop: 20}} source={imagem}></Image>
+                <Image source={imagem}></Image>
             </View>
         );
     }

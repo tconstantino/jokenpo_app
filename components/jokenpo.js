@@ -50,20 +50,26 @@ class Jokenpo extends Component{
 
     render(){
         return(
-            <View>
-                <TopoJokenpo></TopoJokenpo>
-
-                <View style={styles.palco}>
-                    <IconeEscolha escolha={this.state.escolhaUsuario} jogador='Usuário'></IconeEscolha>
-                    <IconeEscolha escolha={this.state.escolhaComputador} jogador='Computador'></IconeEscolha>
-                    <Text style={styles.textoResultado}>{this.state.resultado}</Text>
+            <View style={{flex: 1}}>
+                <View>
+                    <TopoJokenpo></TopoJokenpo>
                 </View>
 
-                <PainelBotoesJokenpo
-                    funcaoPedra={() => this.jogarJokenpo(0)}
-                    funcaoPapel={() => this.jogarJokenpo(1)}
-                    funcaoTesoura={() => this.jogarJokenpo(2)}>
-                </PainelBotoesJokenpo>
+                <View style={{flex: 0.9}}>
+                    <View style={styles.palco}>
+                        <IconeEscolha escolha={this.state.escolhaUsuario} jogador='Você'></IconeEscolha>
+                        <IconeEscolha escolha={this.state.escolhaComputador} jogador='Computador'></IconeEscolha>
+                        <Text style={styles.textoResultado}>{this.state.resultado}</Text>
+                    </View>
+                </View>
+
+                <View style={{flex: 0.1}}>
+                    <PainelBotoesJokenpo
+                        funcaoPedra={() => this.jogarJokenpo(0)}
+                        funcaoPapel={() => this.jogarJokenpo(1)}
+                        funcaoTesoura={() => this.jogarJokenpo(2)}>
+                    </PainelBotoesJokenpo>
+                </View>
 
             </View>
         );
@@ -73,14 +79,13 @@ class Jokenpo extends Component{
 const styles = StyleSheet.create({
     palco: {
         alignItems: 'center',
-        marginTop: 10,
-        height: '68%',
+        paddingTop: 60
     },
     textoResultado: {
         fontSize: 30,
         fontWeight: 'bold',
         color: '#CD5C5C',
-        height: 60,
+        marginTop: 20,
     },
 });
 

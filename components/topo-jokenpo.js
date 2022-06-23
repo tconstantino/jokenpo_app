@@ -16,7 +16,7 @@ class TopoJokenpo extends Component{
 
     render(){
         return(
-            <View style={{marginBottom: 10}}>
+            <View>
                 <Image style={{width: '100%'}} source={require('../images/jokenpo.png')}></Image>
             </View>
         );
